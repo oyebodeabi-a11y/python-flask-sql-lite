@@ -51,7 +51,7 @@ def list():
     con.row_factory = sqlite3.Row
 
     cur = con.cursor()
-    cur.execute("SELECT rowid, * FROM students")
+    cur.execute("SELECT rowid, * FROM student")
 
     rows = cur.fetchall()
     con.close()
@@ -70,7 +70,7 @@ def edit():
             con.row_factory = sqlite3.Row
 
             cur = con.cursor()
-            cur.execute("SELECT rowid, * FROM students WHERE rowid = " + id)
+            cur.execute("SELECT rowid, * FROM student WHERE rowid = " + id)
 
             rows = cur.fetchall()
         except:
